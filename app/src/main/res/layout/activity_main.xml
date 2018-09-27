@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".MainActivity">
+
+    <com.wesley.bpnn.view.BPView
+        android:id="@+id/bpView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        />
+
+    <RelativeLayout
+        android:id="@+id/pannelLayout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="visible"
+        >
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/scoreView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/scoreView"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <Button
+                    android:id="@+id/init"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="setting"
+                    android:onClick="showSetting"
+                    android:textSize="12sp"
+                    />
+
+                <Button
+                    android:id="@+id/random"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="RandomWeights"
+                    android:layout_below="@+id/init"
+                    android:onClick="randomWeight"
+                    android:textSize="12sp"
+                    />
+
+                <Button
+                    android:id="@+id/next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1x"
+                    android:layout_below="@+id/random"
+                    android:onClick="next"
+                    android:textSize="12sp"
+                    />
+
+                <Button
+                    android:id="@+id/next50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="50X"
+                    android:layout_below="@+id/random"
+                    android:layout_toRightOf="@id/next"
+                    android:onClick="next50"
+                    android:textSize="12sp"
+                    />
+                <Button
+                    android:id="@+id/train2Target"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="train"
+                    android:textSize="12sp"
+                    android:layout_below="@+id/next50"
+                    android:onClick="train2Target"
+                    />
+                <Button
+                    android:id="@+id/test"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="test"
+                    android:layout_below="@+id/next50"
+                    android:layout_toRightOf="@id/train2Target"
+                    android:onClick="test"
+                    android:textSize="12sp"
+                    />
+
+            </RelativeLayout>
+        </ScrollView>
+
+
+    </RelativeLayout>
+    <ScrollView
+        android:id="@+id/setting_layout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone"
+        >
+        <include layout="@layout/view_setting"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </ScrollView>
+
+
+
+</LinearLayout>

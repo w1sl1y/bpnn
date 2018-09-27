@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:id="@+id/view_setting"
+    android:paddingLeft="5dp"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INIT"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="number of hidden layers:"
+            android:textSize="10sp"
+            />
+        <EditText
+            android:id="@+id/layers_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="数字逗号隔开"
+            android:textSize="12sp"
+            />
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="举例输入：2,3  则表示有两个隐含层，第一层2个节点，第二层3个节点\n注意是英文逗号,一层就只输入一个数字即可"
+        android:textSize="10sp"
+        android:textColor="#ff0000"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="learning rate:"
+            android:textSize="10sp"
+            />
+        <EditText
+            android:id="@+id/rate_et"
+            android:layout_width="match_parent"
+            android:textSize="12sp"
+            android:hint="default is 1.0"
+            android:inputType="number"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CONDITION CONTROL"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:text="target training error : "/>
+        <EditText
+            android:id="@+id/error_et"
+            android:layout_width="match_parent"
+            android:textSize="10sp"
+            android:hint="default is 0.01"
+            android:inputType="number"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:text="number of iterations: "/>
+        <EditText
+            android:id="@+id/iteration_et"
+            android:layout_width="match_parent"
+            android:textSize="10sp"
+            android:hint="default is MAX_INT"
+            android:inputType="number"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="12sp"
+            android:onClick="cancel"
+            android:text="cancel"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="12sp"
+            android:onClick="doInit"
+            android:text="ok"/>
+    </LinearLayout>
+
+</LinearLayout>
